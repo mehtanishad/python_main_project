@@ -1,0 +1,662 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+<style>
+    .nishad {
+        color: white;
+    }
+
+    .nishad:hover {
+        color: white;
+    }
+
+    .popover-list {
+        margin-top: -30px;
+        margin-left: -10px;
+    }
+    .page-wrapper {
+        min-height: 406px !important;
+    }
+
+    .card-body {
+        background: white;
+        border-radius: 10px;
+    }
+
+    .page-wrapper>.content {
+    padding: 0.475rem 0.900rem;
+    }
+
+</style>
+
+
+
+<div class="header">
+
+    <div class="header-left">
+        <a href="{% static 'index-2.html' %}" class="logo">
+            <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+        </a>
+        <a href="{% static 'index-2.html' %}" class="logo logo-small">
+            <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+        </a>
+    </div>
+
+
+    <div class="top-nav-search">
+        <form>
+            <input type="text" class="form-control" placeholder="Search here">
+            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+
+    <a class="mobile_btn" id="mobile_btn">
+        <i class="fas fa-bars"></i>
+    </a>
+
+
+    <ul class="nav user-menu">
+        <li class="nav-item dropdown noti-dropdown language-drop me-2">
+            <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                <img src="{% static 'assets/img/icons/header-icon-01.svg' %}" alt="">
+            </a>
+            <div class="dropdown-menu ">
+                <div class="noti-content">
+                    <div>
+                        <a class="dropdown-item" href="javascript:;"><i
+                                class="flag flag-lr me-2"></i>English</a>
+                        <a class="dropdown-item" href="javascript:;"><i
+                                class="flag flag-bl me-2"></i>Francais</a>
+                        <a class="dropdown-item" href="javascript:;"><i class="flag flag-cn me-2"></i>Turkce</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown noti-dropdown me-2">
+            <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                <img src="{% static 'assets/img/icons/header-icon-05.svg' %}" alt="">
+            </a>
+            <div class="dropdown-menu notifications">
+                <div class="topnav-dropdown-header">
+                    <span class="notification-title">Notifications</span>
+                    <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                </div>
+                <div class="noti-content">
+                    <ul class="notification-list">
+                        <li class="notification-message">
+                            <a href="#">
+                                <div class="media d-flex">
+                                    <span class="avatar avatar-sm flex-shrink-0">
+                                        <img class="avatar-img rounded-circle" alt="User Image"
+                                            src="{% static 'assets/img/profiles/avatar-02.jpg' %}">
+                                    </span>
+                                    <div class="media-body flex-grow-1">
+                                        <p class="noti-details"><span class="noti-title">Carlson Tech</span> has
+                                            approved <span class="noti-title">your estimate</span></p>
+                                        <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="#">
+                                <div class="media d-flex">
+                                    <span class="avatar avatar-sm flex-shrink-0">
+                                        <img class="avatar-img rounded-circle" alt="User Image"
+                                            src="{% static 'assets/img/profiles/avatar-11.jpg' %}">
+                                    </span>
+                                    <div class="media-body flex-grow-1">
+                                        <p class="noti-details"><span class="noti-title">International Software
+                                                Inc</span> has sent you a invoice in the amount of <span
+                                                class="noti-title">$218</span></p>
+                                        <p class="noti-time"><span class="notification-time">6 mins ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="#">
+                                <div class="media d-flex">
+                                    <span class="avatar avatar-sm flex-shrink-0">
+                                        <img class="avatar-img rounded-circle" alt="User Image"
+                                            src="{% static 'assets/img/profiles/avatar-17.jpg' %}">
+                                    </span>
+                                    <div class="media-body flex-grow-1">
+                                        <p class="noti-details"><span class="noti-title">John Hendry</span> sent
+                                            a cancellation request <span class="noti-title">Apple iPhone
+                                                XR</span></p>
+                                        <p class="noti-time"><span class="notification-time">8 mins ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="notification-message">
+                            <a href="#">
+                                <div class="media d-flex">
+                                    <span class="avatar avatar-sm flex-shrink-0">
+                                        <img class="avatar-img rounded-circle" alt="User Image"
+                                            src="{% static 'assets/img/profiles/avatar-13.jpg' %}">
+                                    </span>
+                                    <div class="media-body flex-grow-1">
+                                        <p class="noti-details"><span class="noti-title">Mercury Software
+                                                Inc</span> added a new product <span class="noti-title">Apple
+                                                MacBook Pro</span></p>
+                                        <p class="noti-time"><span class="notification-time">12 mins ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topnav-dropdown-footer">
+                    <a href="#">View all Notifications</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item zoom-screen me-2">
+            <a href="#" class="nav-link header-nav-list win-maximize">
+                <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+            </a>
+        </li>
+
+        <li class="nav-item dropdown has-arrow new-user-menus">
+            <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                <span class="user-img">
+                    <img class="rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" width="31"
+                        alt="Ryan Taylor">
+                    <div class="user-text">
+                        <h6>{{user_data.first_name}} {{user_data.last_name}}</h6>
+                    </div>
+                </span>
+            </a>
+            <div class="dropdown-menu">
+                <div class="user-header">
+                    <div class="avatar avatar-sm">
+                        <img src="{% static 'assets/img/profiles/avatar-01.jpg' %}" alt="User Image"
+                            class="avatar-img rounded-circle">
+                    </div>
+                    <div class="user-text">
+                        <h6 style="margin-top: 10px;">{{user_data.first_name}} {{user_data.last_name}}</h6>
+                    </div>
+                </div>
+                <a class="dropdown-item" href="{% url 'profile_page' %}">My Profile</a>
+                <a class="dropdown-item" href="{% url 'index' %}">Index</a>
+                <a class="dropdown-item" href="{% url 'forgot_pwd_page' %}">Forgot Password</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+            </div>
+        </li>
+
+    </ul>
+
+</div><br><br>
+
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="submenu" >
+                    <i class="fas fa-graduation"></i><span> Dashboard </span> 
+                    </li>                        
+            
+                
+                       
+      
+               
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Students</span> </a>
+                    <ul>
+                        <li><a href="{% url 'student_page' %}">Student List</a></li>
+                        <li><a href="add-student.html">Student Add</a></li>
+                        <li><a href="edit-student.html">Student Edit</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span
+                            ></span></a>
+                    <ul>
+                        <li><a href="{% url 'teacher_page' %}">Teacher List</a></li>
+                        <li><a href="add-teacher.html">Teacher Add</a></li>
+                        <li><a href="edit-teacher.html">Teacher Edit</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span
+                            ></span></a>
+                    <ul>
+                        <li><a href="departments.html">Department List</a></li>
+                        <li><a href="add-department.html">Department Add</a></li>
+                        <li><a href="edit-department.html">Department Edit</a></li>
+                    </ul>
+                </li>
+                
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-file-invoice-dollar"></i> <span> Campus</span> <span
+                            ></span></a>
+                    <ul>
+                        <li><a href="fees-collections.html">Fees Collection</a></li>
+                        <li><a href="expenses.html">Expenses</a></li>
+                        <li><a href="salary.html">Salary</a></li>
+                        <li><a href="add-fees-collection.html">Add Fees</a></li>
+                        <li><a href="add-expenses.html">Add Expenses</a></li>
+                        <li><a href="add-salary.html">Add Salary</a></li>
+                    </ul>
+                </li>
+                
+                
+                
+
+
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span>Authentication </span> <span
+                            ></span></a>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="forgot-password.html">Forgot Password</a></li>
+                        <li><a href="error-404.html">Error Page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'event_page' %}"><i class="fas fa-calendar-day"></i> <span>Events</span></a>
+                </li>
+                
+
+                <li>
+                    <a href="{% url 'club_page' %}"><i class="fas fa-calendar-day"></i> <span>Club's</span></a>
+                </li>
+              
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-columns"></i> <span> Library </span> <span
+                            ></span></a>
+                    <ul>
+                        <li>
+                            <a href="{% url 'book_page' %}"><i class="fas fa-book"></i> <span>Books View</span></a>
+                        </li>
+                        
+
+
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-table"></i> <span> Routine </span> <span
+                            ></span></a>
+                    <ul>
+                        <li><a href="tables-basic.html">Basic Tables </a></li>
+                        <li><a href="data-tables.html">Data Table </a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="page-wrapper mt-0">
+    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card bg-white">
+                    <div class="card-header">
+                        <h5 class="card-title">@{{user_data.first_name}} {{user_data.last_name}}'s Account</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item"><a class="nav-link active" href="#basic-justified-tab1"
+                                    data-bs-toggle="tab">Profile</a></li>
+                            <li class="nav-item "><a class="nav-link" href="#basic-justified-tab2"
+                                    data-bs-toggle="tab">Security</a></li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="dropdown-toggle nav-link active" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Add Data</a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#basic-justified-tab3" data-bs-toggle="tab"
+                                        aria-expanded="true">Add Book</a>
+                                    <a class="dropdown-item" href="#basic-justified-tab4" data-bs-toggle="tab"
+                                        aria-expanded="true">Add Club</a>
+                                    <a class="dropdown-item" href="#basic-justified-tab5" data-bs-toggle="tab"
+                                        aria-expanded="true">Add Department</a>
+                                    <a class="dropdown-item" href="#basic-justified-tab6" data-bs-toggle="tab"
+                                        aria-expanded="true">Add Event</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div class="tab-pane active" id="basic-justified-tab1">
+                                <form action="{% url 'profile_update_teacher' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>First Name <span class="login-danger">*</span></label>
+                                                <input type="text" name='first_name' class="form-control"
+                                                    placeholder="First Name" value="{{user_data.first_name}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Last Name <span class="login-danger">*</span></label>
+                                                <input type="text" name="last_name" class="form-control"
+                                                    placeholder="Last Name" value="{{user_data.last_name}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Compensation <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="compensation"
+                                                    placeholder="compensation" value="{{teacher_data.compensation}}"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Date Of Birth <span class="login-danger">*</span></label>
+                                                <input class="form-control " name='dateofbirth' type="date"
+                                                    value="{{user_data.DateOfBirth}}" placeholder="YYYY-MM-DD" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Date Of Joining <span class="login-danger">*</span></label>
+                                                <input type="date" class="form-control" name='dateofjoining'
+                                                    value="{{user_data.DateOfJoining}}" placeholder="YYYY-MM-DD"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Address <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="address"
+                                                    placeholder="Address" value="{{user_data.Address}}" required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                                <a href="{% url 'logout' %}">
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-toggle="tooltip" data-bs-trigger="click"
+                                                        data-bs-html="true" data-bs-placement="bottom" title=""
+                                                        aria-describedby="tooltip98582">
+                                                        logout
+                                                    </button></a>
+
+                                                    <a href="{% url 'delete_account_function' %}">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-toggle="tooltip"
+                                                            data-bs-trigger="click" data-bs-html="true"
+                                                            data-bs-placement="bottom" title=""
+                                                            aria-describedby="tooltip98582">
+                                                            Delete Account
+                                                        </button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane " id="basic-justified-tab2">
+                                <form action="{% url 'password_reset' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Current Password <span class="login-danger">*</span></label>
+                                                <input type="password" name='current_password' class="form-control"
+                                                    placeholder="current_password" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>New Password <span class="login-danger">*</span></label>
+                                                <input type="password" name='new_password' class="form-control"
+                                                    placeholder="new_password" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-group local-forms">
+                                                <label>Confirm Password <span class="login-danger">*</span></label>
+                                                <input type="password" name='confirm_password' class="form-control"
+                                                    placeholder="confirm_password" required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                                <a href="{% url 'logout' %}">
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-toggle="tooltip" data-bs-trigger="click"
+                                                        data-bs-html="true" data-bs-placement="bottom" title=""
+                                                        aria-describedby="tooltip98582">
+                                                        logout
+                                                    </button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                            <div class="tab-pane" id="basic-justified-tab3">
+                                <form action="{% url 'add_book_data' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Book Name<span class="login-danger">*</span></label>
+                                                <input type="text" name='book_name' class="form-control"
+                                                    placeholder="Book Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Author <span class="login-danger">*</span></label>
+                                                <input type="text" name="author_name" class="form-control"
+                                                    placeholder="author_name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Price <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="price" placeholder="Price"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Time Period <span class="login-danger">*</span></label>
+                                                <input class="form-control " name="time_period" type="text"
+                                                    placeholder="Time Period " required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane" id="basic-justified-tab4">
+                                <form action="{% url 'add_club' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Club Name<span class="login-danger">*</span></label>
+                                                <input type="text" name='club_name' class="form-control"
+                                                    placeholder="Club Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Open Time <span class="login-danger">*</span></label>
+                                                <input type="text" name="open_time" class="form-control"
+                                                    placeholder="Open Time" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Close Time <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="close_time"
+                                                    placeholder="Close Time" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Head Of Club<span class="login-danger">*</span></label>
+                                                <input class="form-control " name="head_of_club" type="text"
+                                                    placeholder="Head Of Club " required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Contact<span class="login-danger">*</span></label>
+                                                <input class="form-control " name="contact" type="text"
+                                                    placeholder="Contact " required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane" id="basic-justified-tab5">
+                                <form action="{% url 'add_department' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <div class="form-group local-forms">
+                                                <label>Department Name<span class="login-danger">*</span></label>
+                                                <input type="text" name='depart_name' class="form-control"
+                                                    placeholder="Department Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Head Of Department <span class="login-danger">*</span></label>
+                                                <input type="text" name="headofdepart" class="form-control"
+                                                    placeholder="Head Of Department" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Total Faculty <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="total_faculty"
+                                                    placeholder="Total Faculty" required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane" id="basic-justified-tab6">
+                                <form action="{% url 'add_event' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <h5 class="form-title"><span>@{{user_data.Address}}'s Account</span></h5> -->
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Event Name<span class="login-danger">*</span></label>
+                                                <input type="text" name='event_name' class="form-control"
+                                                    placeholder="Event Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Event Date <span class="login-danger">*</span></label>
+                                                <input class="form-control " name='event_date' type="date"
+                                                    placeholder="YYYY-MM-DD" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Event Time <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="event_time"
+                                                    placeholder="Event Time" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group local-forms">
+                                                <label>Chief Guest <span class="login-danger">*</span></label>
+                                                <input type="text" class="form-control" name="chief_guest"
+                                                    placeholder="Chief Guest" required>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="popover-list">
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                                    data-bs-html="true" title="">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

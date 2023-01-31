@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+<style>
+    h3 {
+    color: #e04545;
+    margin-top: -20px;
+    font-size: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+</style>
+
+<div class="main-wrapper login-body">
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="loginbox">
+                <div class="login-left">
+                    <img class="img-fluid" src="{% static 'assets/img/login.png' %}" alt="Logo">
+                </div>
+                <div class="login-right">
+                    <div class="login-right-wrap">
+                        <h1>Welcome to Preskool</h1>
+                        <p class="account-subtitle">Need an account? <a href="{% url 'signup_page' %}">Sign Up</a></p>
+                        <h2>Sign in</h2>
+
+                        {% if error %}
+                        <h3>{{ error }}</h3>
+                        {% endif %}
+
+                        <form method="post" action="{% url 'signin' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Email <span class="login-danger">*</span></label>
+                                <input class="form-control" type="email" name="email" required>
+                                <span class="profile-views"><i class="fas fa-user-circle"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password <span class="login-danger">*</span></label>
+                                <input class="form-control pass-input" type="password" name="password" required>
+                                <span class="profile-views feather-eye toggle-password"></span>
+                            </div>
+                            <div class="forgotpass">
+                                <a href="{% url 'forgot_pwd_page' %}">Forgot Password?</a>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit">Login</button>
+                            </div>
+                        </form>
+
+                        <div class="login-or">
+                            <span class="or-line"></span>
+                            <span class="span-or">or</span>
+                        </div>
+
+                        <div class="social-login">
+                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

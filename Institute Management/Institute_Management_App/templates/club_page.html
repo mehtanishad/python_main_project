@@ -1,0 +1,357 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+
+<style>
+    .page-wrapper {
+        min-height: 406px !important;
+    }
+    .star-student.table-striped tbody tr:nth-of-type(odd) {
+    background-color: lavender;
+    }
+
+</style>
+
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="{% static 'index-2.html' %}" class="logo">
+                <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+            </a>
+            <a href="{% static 'index-2.html' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+    
+    
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Search here">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    
+    
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+    
+    
+        <ul class="nav user-menu">
+            <li class="nav-item dropdown noti-dropdown language-drop me-2">
+                <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                    <img src="{% static 'assets/img/icons/header-icon-01.svg' %}" alt="">
+                </a>
+                <div class="dropdown-menu ">
+                    <div class="noti-content">
+                        <div>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="flag flag-lr me-2"></i>English</a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="flag flag-bl me-2"></i>Francais</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="flag flag-cn me-2"></i>Turkce</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown noti-dropdown me-2">
+                <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                    <img src="{% static 'assets/img/icons/header-icon-05.svg' %}" alt="">
+                </a>
+                <div class="dropdown-menu notifications">
+                    <div class="topnav-dropdown-header">
+                        <span class="notification-title">Notifications</span>
+                        <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                    </div>
+                    <div class="noti-content">
+                        <ul class="notification-list">
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-02.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">Carlson Tech</span> has
+                                                approved <span class="noti-title">your estimate</span></p>
+                                            <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-11.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">International Software
+                                                    Inc</span> has sent you a invoice in the amount of <span
+                                                    class="noti-title">$218</span></p>
+                                            <p class="noti-time"><span class="notification-time">6 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-17.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">John Hendry</span> sent
+                                                a cancellation request <span class="noti-title">Apple iPhone
+                                                    XR</span></p>
+                                            <p class="noti-time"><span class="notification-time">8 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-13.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">Mercury Software
+                                                    Inc</span> added a new product <span class="noti-title">Apple
+                                                    MacBook Pro</span></p>
+                                            <p class="noti-time"><span class="notification-time">12 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="#">View all Notifications</a>
+                    </div>
+                </div>
+            </li>
+    
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+    
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" width="31"
+                            alt="Ryan Taylor">
+                        <div class="user-text">
+                            <h6>{{user_data.first_name}} {{user_data.last_name}}</h6>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{% static 'assets/img/profiles/avatar-01.jpg' %}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6 style="margin-top: 10px;">{{user_data.first_name}} {{user_data.last_name}}</h6>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="{% url 'profile_page' %}">My Profile</a>
+                    <a class="dropdown-item" href="{% url 'index' %}">Index</a>
+                    <a class="dropdown-item" href="{% url 'forgot_pwd_page' %}">Forgot Password</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+    
+        </ul>
+    
+    </div> <br><br>
+
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="submenu" >
+                        <i class="fas fa-graduation"></i><span> Dashboard </span> 
+                        </li>                        
+                
+                    
+                           
+          
+                   
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-graduation-cap"></i> <span> Students</span> </a>
+                        <ul>
+                            <li><a href="{% url 'student_page' %}">Student List</a></li>
+                            <li><a href="add-student.html">Student Add</a></li>
+                            <li><a href="edit-student.html">Student Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span
+                                ></span></a>
+                        <ul>
+                            <li><a href="{% url 'teacher_page' %}">Teacher List</a></li>
+                            <li><a href="add-teacher.html">Teacher Add</a></li>
+                            <li><a href="edit-teacher.html">Teacher Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span
+                                ></span></a>
+                        <ul>
+                            <li><a href="departments.html">Department List</a></li>
+                            <li><a href="add-department.html">Department Add</a></li>
+                            <li><a href="edit-department.html">Department Edit</a></li>
+                        </ul>
+                    </li>
+                    
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-file-invoice-dollar"></i> <span> Campus</span> <span
+                                ></span></a>
+                        <ul>
+                            <li><a href="fees-collections.html">Fees Collection</a></li>
+                            <li><a href="expenses.html">Expenses</a></li>
+                            <li><a href="salary.html">Salary</a></li>
+                            <li><a href="add-fees-collection.html">Add Fees</a></li>
+                            <li><a href="add-expenses.html">Add Expenses</a></li>
+                            <li><a href="add-salary.html">Add Salary</a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+
+
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-shield-alt"></i> <span>Authentication </span> <span
+                                ></span></a>
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="forgot-password.html">Forgot Password</a></li>
+                            <li><a href="error-404.html">Error Page</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'event_page' %}"><i class="fas fa-calendar-day"></i> <span>Events</span></a>
+                    </li>
+                    
+
+                    <li>
+                        <a href="{% url 'club_page' %}"><i class="fas fa-calendar-day"></i> <span>Club's</span></a>
+                    </li>
+                  
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-columns"></i> <span> Library </span> <span
+                                ></span></a>
+                        <ul>
+                            <li>
+                                <a href="{% url 'book_page' %}"><i class="fas fa-book"></i> <span>Books View</span></a>
+                            </li>
+                            
+
+
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-table"></i> <span> Routine </span> <span
+                                ></span></a>
+                        <ul>
+                            <li><a href="tables-basic.html">Basic Tables </a></li>
+                            <li><a href="data-tables.html">Data Table </a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-table comman-shadow">
+                        <div class="card-body">
+
+                            <div class="page-header">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="page-title">Club's</h3>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table
+                                    class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                    <thead class="student-thread">
+                                        <tr>
+                                            <th>
+                                                <!-- <div class="form-check check-tables">
+                                                    <input class="form-check-input" type="checkbox" value="something">
+                                                </div> -->
+                                            </th>
+                                            <th>Club Name</th>
+                                            <th>Open Time</th>
+                                            <th>Close Time</th>
+                                            <th>Head Of Club</th>
+                                            <th>Contact</th>
+                                            <!-- <th>Action</th> -->
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for S_data in club %}
+                                        <tr>
+                                            <td>
+                                                <div class="form-check check-tables">
+                                                    <input class="form-check-input" type="checkbox" value="something">
+                                                </div>
+                                            </td>
+                                            <td>{{S_data.Club_Name}}</td>
+                                            <td>{{S_data.Open_Time}}</td>
+                                            <td>{{S_data.Close_Time}}</td>
+                                            <td>{{S_data.Head_Of_Club}}</td>
+                                            <td>{{S_data.Contact}}</td>
+                                            <td><button class="btn btn-danger"><a style="color: white;" href="{% url 'club_delete' club_name=S_data.Club_Name %}">Delete</a></button</td>
+
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
