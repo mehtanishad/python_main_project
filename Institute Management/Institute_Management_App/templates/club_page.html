@@ -199,8 +199,8 @@
                         <a href="#"><i class="fas fa-graduation-cap"></i> <span> Students</span> </a>
                         <ul>
                             <li><a href="{% url 'student_page' %}">Student List</a></li>
-                            <li><a href="add-student.html">Student Add</a></li>
-                            <li><a href="edit-student.html">Student Edit</a></li>
+                            <li><a href="{% url 'signup_page' %}">Student Add</a></li>
+                            <li><a href="{% url 'signin_page' %}">Student Edit</a></li>
                         </ul>
                     </li>
                     <li class="submenu">
@@ -208,17 +208,17 @@
                                 ></span></a>
                         <ul>
                             <li><a href="{% url 'teacher_page' %}">Teacher List</a></li>
-                            <li><a href="add-teacher.html">Teacher Add</a></li>
-                            <li><a href="edit-teacher.html">Teacher Edit</a></li>
+                            <li><a href="{% url 'signup_page' %}">Teacher Add</a></li>
+                            <li><a href="{% url 'signin_page' %}">Teacher Edit</a></li>
                         </ul>
                     </li>
                     <li class="submenu">
                         <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span
                                 ></span></a>
                         <ul>
-                            <li><a href="departments.html">Department List</a></li>
-                            <li><a href="add-department.html">Department Add</a></li>
-                            <li><a href="edit-department.html">Department Edit</a></li>
+                            <li><a href="{% url 'department_page' %}">Department List</a></li>
+                            <li><a href="{% url 'signup_page' %}">Department Add</a></li>
+                            <li><a href="{% url 'signin_page' %}">Department Edit</a></li>
                         </ul>
                     </li>
                     
@@ -244,10 +244,9 @@
                         <a href="#"><i class="fas fa-shield-alt"></i> <span>Authentication </span> <span
                                 ></span></a>
                         <ul>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="forgot-password.html">Forgot Password</a></li>
-                            <li><a href="error-404.html">Error Page</a></li>
+                            <li><a href="{% url 'signin_page' %}">Login</a></li>
+                            <li><a href="{% url 'signup_page' %}">Register</a></li>
+                            <li><a href="{% url 'forgot_pwd_page' %}">Forgot Password</a></li>
                         </ul>
                     </li>
                     <li>

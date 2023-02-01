@@ -58,5 +58,7 @@ urlpatterns = [
      path('add_event/',add_event,name='add_event'),
     path('add_department/',add_department,name='add_department'),
     path('event_data/',event_data,name='event_data'),
-    path('department_data/',department_data,name='department_data'),    
+    path('department_data/',department_data,name='department_data'),  
+     
+     
 ]
