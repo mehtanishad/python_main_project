@@ -210,28 +210,13 @@
                             <li><a href="{% url 'signin_page' %}">Teacher Edit</a></li>
                         </ul>
                     </li>
-                    <li class="submenu">
-                        <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span
-                                ></span></a>
-                        <ul>
-                            <li><a href="{% url 'department_page' %}">Department List</a></li>
-                            <li><a href="{% url 'signup_page' %}">Department Add</a></li>
-                            <li><a href="{% url 'signin_page' %}">Department Edit</a></li>
-                        </ul>
+                    <li>
+                        <a href="{% url 'department_page' %}"><i class="fas fa-building"></i> <span> Departments List</span></a>
                     </li>
                     
                     </li>
-                    <li class="submenu">
-                        <a href="#"><i class="fas fa-file-invoice-dollar"></i> <span> Campus</span> <span
-                                ></span></a>
-                        <ul>
-                            <li><a href="fees-collections.html">Fees Collection</a></li>
-                            <li><a href="expenses.html">Expenses</a></li>
-                            <li><a href="salary.html">Salary</a></li>
-                            <li><a href="add-fees-collection.html">Add Fees</a></li>
-                            <li><a href="add-expenses.html">Add Expenses</a></li>
-                            <li><a href="add-salary.html">Add Salary</a></li>
-                        </ul>
+                    <li>
+                        <a href="{% url 'maintenance_page' %}"><i class="fas fa-file-invoice-dollar"></i> <span> Campus</span></a>
                     </li>
                     
                     
@@ -245,6 +230,7 @@
                             <li><a href="{% url 'signin_page' %}">Login</a></li>
                             <li><a href="{% url 'signup_page' %}">Register</a></li>
                             <li><a href="{% url 'forgot_pwd_page' %}">Forgot Password</a></li>
+                            <li><a href="{% url 'index' %}">Home Page</a></li>
                         </ul>
                     </li>
                     <li>
