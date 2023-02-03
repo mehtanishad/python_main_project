@@ -23,6 +23,7 @@ urlpatterns = [
     path('update_profile_page/',update_profile_page,name='update_profile_page'),
     path('department_page/',department_page,name='department_page'),
     path('event_page/',event_page,name='event_page'),
+    path('maintenance_page/',maintenance_page,name='maintenance_page'),
 
 
 
