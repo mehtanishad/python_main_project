@@ -27,14 +27,6 @@ urlpatterns = [
 
 
 
-
-
-
-
-
-
-
-
     path('profile_data_2/',profile_data_2,name='profile_data_2'),
     path('profile_update_teacher/',profile_update_teacher,name='profile_update_teacher'),
     path('password_reset/', password_reset, name='password_reset'),
