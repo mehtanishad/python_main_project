@@ -83,7 +83,7 @@ DATABASES = {
         # "USER": 'root',
         # "HOST": 'localhost',
         # "PASSWORD": '',
-        # "PORT": 3306,
+        # "PORT": 3306, 
     }
 }
 
@@ -128,5 +128,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mehtanishad2030@gmail.co+m'
-EMAIL_HOST_PASSWORD = 'qsmvmudonlbpdwwc' #app password
+EMAIL_HOST_USER = 'mehtanishad317@gmail.com'
+EMAIL_HOST_PASSWORD = 'lispfbqbvmydvvow' #app password
