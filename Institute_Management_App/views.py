@@ -239,7 +239,7 @@ def forgot_password(request):
         else:
             print("Email Not Register")
             return redirect(signup_page)
-    except :
+    except:
         print("invalid Email")
         return redirect(signin_page)
 
