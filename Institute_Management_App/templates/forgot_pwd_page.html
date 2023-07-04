@@ -41,6 +41,12 @@
                 </div>
                 <div class="login-right">
                     <div class="login-right-wrap">
+                        {% if error %}
+                        <p style="margin-top: 20px;margin-bottom: 30px; color: red; text-align: center;">{{error}}</p>
+                        {% else %}
+                        <p style="margin-top: 20px;margin-bottom: 30px; color: navy; text-align: center;">{{msg}}</p>
+                        {% endif %}
+
                         <h1>Forgot Password</h1>
                         <p class="account-subtitle">Enter Your Email For Forgot Password</p>
 
